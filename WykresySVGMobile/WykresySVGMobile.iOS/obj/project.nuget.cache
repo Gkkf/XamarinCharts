@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "soVRdyqWS/Abv/C7X+3XbQeFNlVVBGnxiztP36T75HxfPguZO3q/P3ZkFGw0BHt7RHZaVtMiRYtBsAEsj5OZtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gkkf1\\Desktop\\WykresySVGMobile\\WykresySVGMobile\\WykresySVGMobile.iOS\\WykresySVGMobile.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gkkf1\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\gkkf1\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\gkkf1\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
