@@ -4,11 +4,12 @@
              x:Class="WykresySVGMobile.MainPage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="400"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
+        
         <!-- SCALE -->
         <BoxView x:Name="ScaleLine1" Color="Gray" HeightRequest="1" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="270" Margin="10,0,0,0"/>
         <BoxView x:Name="ScaleLine2" Color="Gray" HeightRequest="1" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="270" Margin="10,0,0,0"/>
@@ -18,135 +19,132 @@
         <Label StyleId="2" x:Name="b2" Text="0" VerticalOptions="End" Margin="10,0,0,0"/>
         <Label StyleId="3" x:Name="b3" Text="0" VerticalOptions="End" Margin="10,0,0,0"/>
         <Label StyleId="4" x:Name="b4" Text="0" VerticalOptions="End" Margin="10,0,0,0"/>
-        <!-- BARCHART -->
-
-        <FlexLayout x:Name="BarChar" Grid.Row="0" Direction="Row" JustifyContent="Center" AlignItems="End" IsVisible="false">
-            
-            <BoxView Color="Blue" HeightRequest="50" WidthRequest="60" />
-            <BoxView Color="Red" HeightRequest="100" WidthRequest="60" />
-            <BoxView Color="Green" HeightRequest="150" WidthRequest="60" />
-            <BoxView Color="Yellow" HeightRequest="300" WidthRequest="60" />
-            
-            
-        </FlexLayout>
         
+        <!-- BAR CHART -->
+        <FlexLayout x:Name="BarChar" Grid.Row="0" Direction="Row" JustifyContent="Center" AlignItems="End" IsVisible="false">
+            <BoxView Color="LightGreen" HeightRequest="50" WidthRequest="60"/>
+            <BoxView Color="DarkOrange" HeightRequest="100" WidthRequest="60"/>
+            <BoxView Color="LightBlue" HeightRequest="150" WidthRequest="60"/>
+            <BoxView Color="DarkSalmon" HeightRequest="300" WidthRequest="60"/>
+        </FlexLayout>
 
+        <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="6" x:Name="BarLineX"/>
+        <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="80" Y1="100" Y2="400" StrokeThickness="6" x:Name="BarLineY"/>
 
-        <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="6" x:Name="BarLineX"></Line>
-        <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="80" Y1="100" Y2="400" StrokeThickness="6" x:Name="BarLineY"></Line>
-
-
-
-
-        <!-- LINE CHARTS -->
+        <!-- POINT CHART -->
         <Grid Grid.Row="0" x:Name="LineChar" IsVisible="false">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2.75*"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="2.75*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
-            <Ellipse x:Name="point1" Grid.Column="1" HeightRequest="5" Fill="Blue" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
-            <Ellipse x:Name="point2" Grid.Column="2" HeightRequest="5" Fill="Blue" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
-            <Ellipse x:Name="point3" Grid.Column="3" HeightRequest="5" Fill="Blue" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
-            <Ellipse x:Name="point4" Grid.Column="4" HeightRequest="5" Fill="Blue" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
+            
+            <Ellipse x:Name="point1" Grid.Column="1" HeightRequest="3" Fill="red" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
+            <Ellipse x:Name="point2" Grid.Column="2" HeightRequest="3" Fill="red" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
+            <Ellipse x:Name="point3" Grid.Column="3" HeightRequest="3" Fill="red" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
+            <Ellipse x:Name="point4" Grid.Column="4" HeightRequest="3" Fill="red" WidthRequest="5" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0" IsVisible="false"/>
 
-            <Polyline Grid.Column="1" Grid.ColumnSpan="4" Points="2.5,100 60,380 117.5,357 175,390" StrokeThickness="5" Stroke="Blue" ></Polyline>
-            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Black" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4"></Line>
-            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx1"></Line>
-            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx2"></Line>
-            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx3"></Line>
-            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx4"></Line>
-            <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="80" Y1="100" Y2="400" StrokeThickness="4"></Line>
+            <Polyline Grid.Column="1" Grid.ColumnSpan="4" Points="2.5,100 60,380 117.5,357 175,390" StrokeThickness="3" Stroke="red"/>
+            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Black" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4"/>
+            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx1"/>
+            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx2"/>
+            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx3"/>
+            <Line Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="End" Stroke="Gray" X1="80" X2="350" Y1="0" Y2="0" StrokeThickness="4" x:Name="lx4"/>
+            <Line Grid.Row="0" VerticalOptions="End" Stroke="Black" X1="80" X2="80" Y1="100" Y2="400" StrokeThickness="4"/>
         </Grid>
+        
         <!-- PIE CHART -->
         <Grid Grid.Row="0" x:Name="GridPieChar" IsVisible="true" HeightRequest="300">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition Width="300"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <Grid x:Name="GridPieChar1" Grid.Column="1" Margin="0,50,0,0"></Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="70"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="70"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
-                <Rectangle Grid.Column="1" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="red" Margin="0,0,0,0"></Rectangle>
-                <Rectangle Grid.Column="2" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="green" Margin="0,0,0,0"></Rectangle>
-                <Rectangle Grid.Column="3" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="yellow" Margin="0,0,0,0"></Rectangle>
-                <Rectangle Grid.Column="4" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="orange" Margin="0,0,0,0"></Rectangle>
+
+                <Rectangle Grid.Column="1" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="lightgreen" Margin="0,0,0,0"/>
+                <Rectangle Grid.Column="2" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="darkorange" Margin="0,0,0,0"/>
+                <Rectangle Grid.Column="3" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="lightblue" Margin="0,0,0,0"/>
+                <Rectangle Grid.Column="4" WidthRequest="40" HeightRequest="40" HorizontalOptions="Center" VerticalOptions="End" Fill="darksalmon" Margin="0,0,0,0"/>
             </Grid>
-
         </Grid>
-            <Grid Margin="10,10,10,10" Grid.Row="1" x:Name="GridLables">
-
+        
+        <Grid Margin="10,10,10,10" Grid.Row="1" x:Name="GridLables">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
-                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
-                <Label x:Name="LabelName_1" StyleId="1" Text="Firma 1" VerticalOptions="Center" Rotation="90" Grid.Column="1"></Label>
-                <Label x:Name="LabelName_2" StyleId="2" Text="Firma 1" VerticalOptions="Center" Rotation="90" Grid.Column="2"></Label>
-                <Label x:Name="LabelName_3" StyleId="3" Text="Firma 1" VerticalOptions="Center" Rotation="90" Grid.Column="3"></Label>
-                <Label x:Name="LabelName_4" StyleId="4" Text="Firma 1" VerticalOptions="Center" Rotation="90" Grid.Column="4"></Label>
-            </Grid>
+            <Label x:Name="LabelName_1" StyleId="1" Text="Nazwa 1" VerticalOptions="Center" Rotation="90" Grid.Column="1"/>
+            <Label x:Name="LabelName_2" StyleId="2" Text="Nazwa 2" VerticalOptions="Center" Rotation="90" Grid.Column="2"/>
+            <Label x:Name="LabelName_3" StyleId="3" Text="Nazwa 3" VerticalOptions="Center" Rotation="90" Grid.Column="3"/>
+            <Label x:Name="LabelName_4" StyleId="4" Text="Nazwa 4" VerticalOptions="Center" Rotation="90" Grid.Column="4"/>
+        </Grid>
 
-                
         <!-- RADIO BUTTONS -->
-            <Grid Grid.Row="2">
+        <Grid Grid.Row="2">
             <Grid Margin="10,10,10,10">
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                
                 <RadioButton x:Name="rd1" Grid.Column="0" Content="Słupkowy" FontSize="14" CheckedChanged="RadioButton_CheckedChanged"/>
                 <RadioButton x:Name="rd2" Grid.Column="1" Content="Liniowy" FontSize="14" CheckedChanged="RadioButton_CheckedChanged"/>
                 <RadioButton x:Name="rd3" Grid.Column="2" Content="Kołowy" FontSize="14" CheckedChanged="RadioButton_CheckedChanged"/>
             </Grid>
         </Grid>
-        <!-- VALUES -->
+        
+        <!-- TABLE -->
         <Grid Grid.Row="3">
             <Grid Margin="10,10,10,10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Nazwa"/>
                 <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Wartość"/>
                 <!-- NAMES -->
-                <Entry Grid.Row="0" Grid.Column="1" FontSize="14" x:Name="NameEntry1" TextChanged="NameEntry_TextChanged"></Entry>
-                <Entry Grid.Row="0" Grid.Column="2" FontSize="14" x:Name="NameEntry2" TextChanged="NameEntry_TextChanged"></Entry>
-                <Entry Grid.Row="0" Grid.Column="3" FontSize="14" x:Name="NameEntry3" TextChanged="NameEntry_TextChanged"></Entry>
-                <Entry Grid.Row="0" Grid.Column="4" FontSize="14" x:Name="NameEntry4" TextChanged="NameEntry_TextChanged"></Entry>
+                <Entry Grid.Row="0" Grid.Column="1" FontSize="14" x:Name="NameEntry1" TextChanged="NameEntry_TextChanged"/>
+                <Entry Grid.Row="0" Grid.Column="2" FontSize="14" x:Name="NameEntry2" TextChanged="NameEntry_TextChanged"/>
+                <Entry Grid.Row="0" Grid.Column="3" FontSize="14" x:Name="NameEntry3" TextChanged="NameEntry_TextChanged"/>
+                <Entry Grid.Row="0" Grid.Column="4" FontSize="14" x:Name="NameEntry4" TextChanged="NameEntry_TextChanged"/>
                 <!-- VALUES -->
-                <Entry Grid.Row="1" Grid.Column="1" FontSize="14" x:Name="ValueEntry1" StyleId="1" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"></Entry>
-                <Entry Grid.Row="1" Grid.Column="2" FontSize="14" x:Name="ValueEntry2" StyleId="2" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"></Entry>
-                <Entry Grid.Row="1" Grid.Column="3" FontSize="14" x:Name="ValueEntry3" StyleId="3" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"></Entry>
-                <Entry Grid.Row="1" Grid.Column="4" FontSize="14" x:Name="ValueEntry4" StyleId="4" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"></Entry>
+                <Entry Grid.Row="1" Grid.Column="1" FontSize="14" x:Name="ValueEntry1" StyleId="1" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"/>
+                <Entry Grid.Row="1" Grid.Column="2" FontSize="14" x:Name="ValueEntry2" StyleId="2" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"/>
+                <Entry Grid.Row="1" Grid.Column="3" FontSize="14" x:Name="ValueEntry3" StyleId="3" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"/>
+                <Entry Grid.Row="1" Grid.Column="4" FontSize="14" x:Name="ValueEntry4" StyleId="4" TextChanged="ValueEntry_TextChanged" Keyboard="Numeric"/>
             </Grid>
         </Grid>
     </Grid>
